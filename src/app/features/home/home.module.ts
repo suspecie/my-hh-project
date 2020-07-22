@@ -1,3 +1,4 @@
+import { FooterModule } from './../../core/components/footer/footer.module';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { NgModule } from '@angular/core';
@@ -8,6 +9,7 @@ import { NgModule } from '@angular/core';
   ],
   imports: [
     HomeRoutingModule,
+    FooterModule,
   ],
 })
 export class HomeModule { }
