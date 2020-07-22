@@ -1,3 +1,4 @@
+import { BoxProductModule } from './../../shared/components/box-product/box-product.module';
 import { HeaderModule } from './../../core/components/header/header.module';
 import { FooterModule } from './../../core/components/footer/footer.module';
 import { ProductsRoutingModule } from './products-routing.module';
@@ -7,6 +8,7 @@ import { NgModule } from '@angular/core';
   declarations: [ProductsComponent],
   imports: [
     ProductsRoutingModule,
+    BoxProductModule,
     FooterModule,
     HeaderModule,
   ],

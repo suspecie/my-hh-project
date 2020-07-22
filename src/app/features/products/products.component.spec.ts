@@ -1,3 +1,4 @@
+import { BoxProductModule } from './../../shared/components/box-product/box-product.module';
 import { HeaderModule } from './../../core/components/header/header.module';
 import { FooterModule } from './../../core/components/footer/footer.module';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
@@ -12,6 +13,7 @@ describe('ProductsComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ProductsComponent],
       imports: [
+        BoxProductModule,
         FooterModule,
         HeaderModule,
       ],
