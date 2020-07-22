@@ -1,5 +1,5 @@
 {
-  "extends": "tslint:recommended",
+  "extends": "tslint-config-airbnb",
   "rules": {
     "align": {
       "options": [
@@ -134,6 +134,7 @@
       ]
     },
     "no-conflicting-lifecycle": true,
+    "no-constant-condition": true,
     "no-host-metadata-property": true,
     "no-input-rename": true,
     "no-inputs-metadata-property": true,
