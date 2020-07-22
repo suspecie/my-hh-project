@@ -1,3 +1,4 @@
+import { HeaderModule } from './../../core/components/header/header.module';
 import { FooterModule } from './../../core/components/footer/footer.module';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
@@ -10,7 +11,10 @@ describe('HomeComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [HomeComponent],
-      imports: [FooterModule],
+      imports: [
+        FooterModule,
+        HeaderModule,
+      ],
     })
     .compileComponents();
   }));
