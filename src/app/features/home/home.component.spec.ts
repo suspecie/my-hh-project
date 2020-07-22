@@ -1,3 +1,4 @@
+import { SearchModule } from './../../shared/components/search/search.module';
 import { HeaderModule } from './../../core/components/header/header.module';
 import { FooterModule } from './../../core/components/footer/footer.module';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
@@ -14,6 +15,7 @@ describe('HomeComponent', () => {
       imports: [
         FooterModule,
         HeaderModule,
+        SearchModule,
       ],
     })
     .compileComponents();

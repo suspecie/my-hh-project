@@ -1,3 +1,4 @@
+import { SearchModule } from './../../shared/components/search/search.module';
 import { HeaderModule } from './../../core/components/header/header.module';
 import { FooterModule } from './../../core/components/footer/footer.module';
 import { HomeRoutingModule } from './home-routing.module';
@@ -12,6 +13,7 @@ import { NgModule } from '@angular/core';
     HomeRoutingModule,
     FooterModule,
     HeaderModule,
+    SearchModule,
   ],
 })
 export class HomeModule { }
