@@ -1,3 +1,4 @@
+import { AllProductsModule } from './features/all-products/all-products.module';
 import { ProductsModule } from './features/products/products.module';
 import { HomeModule } from './features/home/home.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,6 +12,7 @@ import { AppComponent } from './app.component';
     AppComponent,
   ],
   imports: [
+    AllProductsModule,
     AppRoutingModule,
     ProductsModule,
     BrowserModule,

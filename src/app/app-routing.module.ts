@@ -10,6 +10,10 @@ const routes: Routes = [
     path: 'produtos',
     loadChildren: './features/products/products.module#ProductsModule',
   },
+  {
+    path: 'produtos/todos',
+    loadChildren: './features/all-products/all-products.module#AllProductsModule',
+  },
 ];
 
 @NgModule({
