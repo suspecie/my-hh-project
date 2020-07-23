@@ -1,3 +1,4 @@
+import { CardProductModule } from './../../shared/components/card-product/card-product.module';
 import { BoxProductModule } from './../../shared/components/box-product/box-product.module';
 import { HeaderModule } from './../../core/components/header/header.module';
 import { FooterModule } from './../../core/components/footer/footer.module';
@@ -13,6 +14,7 @@ describe('ProductsComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ProductsComponent],
       imports: [
+        CardProductModule,
         BoxProductModule,
         FooterModule,
         HeaderModule,

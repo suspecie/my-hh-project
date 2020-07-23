@@ -1,3 +1,4 @@
+import { CardProductModule } from './../../shared/components/card-product/card-product.module';
 import { BoxProductModule } from './../../shared/components/box-product/box-product.module';
 import { HeaderModule } from './../../core/components/header/header.module';
 import { FooterModule } from './../../core/components/footer/footer.module';
@@ -8,6 +9,7 @@ import { NgModule } from '@angular/core';
   declarations: [ProductsComponent],
   imports: [
     ProductsRoutingModule,
+    CardProductModule,
     BoxProductModule,
     FooterModule,
     HeaderModule,
