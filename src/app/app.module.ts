@@ -13,12 +13,8 @@ import { AppComponent } from './app.component';
     AppComponent,
   ],
   imports: [
-    AllProductsModule,
     AppRoutingModule,
-    ErrorPageModule,
-    ProductsModule,
     BrowserModule,
-    HomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
