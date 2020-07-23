@@ -14,6 +14,10 @@ const routes: Routes = [
     path: 'produtos/todos',
     loadChildren: './features/all-products/all-products.module#AllProductsModule',
   },
+  {
+    path: '**',
+    loadChildren: './features/error-page/error-page.module#ErrorPageModule',
+  },
 ];
 
 @NgModule({
