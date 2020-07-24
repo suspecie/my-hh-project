@@ -1,3 +1,5 @@
+import { Apollo } from 'apollo-angular';
+import { PocSearchService } from './../../../core/services/poc-search.service';
 import { GeocodeService } from './../../../core/services/geocode.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -17,7 +19,9 @@ describe('SearchComponent', () => {
         HttpClientModule,
       ],
       providers: [
+        PocSearchService,
         GeocodeService,
+        Apollo,
       ],
     })
     .compileComponents();

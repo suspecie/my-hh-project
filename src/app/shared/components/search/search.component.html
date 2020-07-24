@@ -1,4 +1,10 @@
 <form [formGroup]="addressForm">
   <input type="text" formControlName="address">
   <button name="btnSearch" (click)="onSubmit()">Pesquisar</button>
+  <div *ngFor="let poc of pocs">
+    <div>
+      <p>{{ poc?.tradingName }}</p>
+      <p>{{ poc?.address?.address1 }} {{ poc?.address?.address2}}, {{ poc?.address?.number}} - {{ poc?.address?.city }}/{{ poc?.address?.province}}</p>
+    </div>
+  </div>
 </form>

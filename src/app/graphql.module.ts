@@ -4,6 +4,7 @@ import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 const uri = 'https://api.code-challenge.ze.delivery/public/graphql';
+// tslint:disable-next-line: typedef
 export function createApollo(httpLink: HttpLink) {
   return {
     link: httpLink.create({ uri }),

@@ -1,5 +1,7 @@
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
+// tslint:disable-next-line: import-name
 import gql from 'graphql-tag';
 
 @Injectable()
@@ -7,9 +9,8 @@ export class PocSearchService {
 
   constructor(private apollo: Apollo) { }
 
-  public getPoc(latitude: string, longitude: string): any {
-    return new Promise((resolve) => {
-      this.apollo
+  public getPoc(latitude: string, longitude: string): Observable<any> {
+    return this.apollo
       .query<any>({
         query: gql`
         query pocSearchMethod($now: DateTime!, $algorithm: String!, $lat: String!, $long: String!) {
@@ -70,13 +71,10 @@ export class PocSearchService {
           now: new Date(),
         },
       })
-      .subscribe(
+      .pipe(
         (data) => {
-          console.log('data', data);
-          resolve(data);
+          return data;
         },
       );
-
-    });
   }
 }

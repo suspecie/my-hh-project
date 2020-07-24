@@ -12,7 +12,7 @@ import { Component } from '@angular/core';
 export class SearchComponent {
 
   public addressForm: FormGroup;
-  public pocs: any;
+  public pocs: [];
 
   constructor(
     private pocSearchService: PocSearchService,
@@ -45,9 +45,11 @@ export class SearchComponent {
   }
 
   private getPocSearch(lat: string, long: string): void {
-    this.pocs = this.pocSearchService.getPoc(lat, long)
-      .then((res) => {
-        this.pocs = res;
+    this.pocSearchService.getPoc(lat, long)
+      .subscribe((resp) => {
+        console.log('resp', resp.data.pocSearch);
+        this.pocs = resp.data.pocSearch;
+        console.log('this.pocs', this.pocs);
       });
   }
 }

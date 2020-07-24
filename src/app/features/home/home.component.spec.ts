@@ -1,3 +1,5 @@
+import { HttpClientModule } from '@angular/common/http';
+import { Apollo } from 'apollo-angular';
 import { SearchModule } from './../../shared/components/search/search.module';
 import { HeaderModule } from './../../core/components/header/header.module';
 import { FooterModule } from './../../core/components/footer/footer.module';
@@ -13,9 +15,13 @@ describe('HomeComponent', () => {
     TestBed.configureTestingModule({
       declarations: [HomeComponent],
       imports: [
+        HttpClientModule,
         FooterModule,
         HeaderModule,
         SearchModule,
+      ],
+      providers: [
+        Apollo,
       ],
     })
     .compileComponents();
