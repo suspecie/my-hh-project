@@ -1,6 +1,8 @@
+import { IAddressInfo } from './../../interfaces/address-info.interface';
+import { PocSearchService } from './../../../core/services/poc-search.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { GeocodeService } from './../../../core/services/geocode.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-search',
@@ -9,9 +11,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent {
 
-  addressForm: FormGroup;
+  public addressForm: FormGroup;
+  public pocs: any;
 
   constructor(
+    private pocSearchService: PocSearchService,
     private geocodeService: GeocodeService,
     private fb: FormBuilder,
   ) {
@@ -27,9 +31,23 @@ export class SearchComponent {
   private getLatLogByAddress(address: string): void {
     this.geocodeService.getLatLogByAddress(address)
       .subscribe(
-        (addressInfo) => {
-          console.log('addressInfo', addressInfo);
+        (addressInfo: IAddressInfo) => {
+          if (addressInfo && addressInfo.results[0]
+              && addressInfo.results[0].geometry && addressInfo.results[0].geometry.location
+          ) {
+            this.getPocSearch(
+              addressInfo.results[0].geometry.location.lat,
+              addressInfo.results[0].geometry.location.lng,
+            );
+          }
         },
       );
+  }
+
+  private getPocSearch(lat: string, long: string): void {
+    this.pocs = this.pocSearchService.getPoc(lat, long)
+      .then((res) => {
+        this.pocs = res;
+      });
   }
 }

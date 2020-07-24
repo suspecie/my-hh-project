@@ -1,12 +1,10 @@
-import { ErrorPageModule } from './features/error-page/error-page.module';
-import { AllProductsModule } from './features/all-products/all-products.module';
-import { ProductsModule } from './features/products/products.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { HomeModule } from './features/home/home.module';
 import { NgModule } from '@angular/core';
 
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GraphQLModule } from './graphql.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +12,9 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     AppRoutingModule,
+    HttpClientModule,
     BrowserModule,
+    GraphQLModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -26,6 +26,7 @@
     "@angular/platform-browser-dynamic": "~10.0.4",
     "@angular/router": "~10.0.4",
     "@types/jest": "^26.0.5",
+    "apollo-angular": "^1.10.0",
     "jest": "^26.1.0",
     "jest-preset-angular": "^8.2.1",
     "pre-commit": "^1.2.2",
@@ -34,7 +35,13 @@
     "stylelint-config-standard": "^20.0.0",
     "tslib": "^2.0.0",
     "tslint-eslint-rules": "^5.4.0",
-    "zone.js": "~0.10.3"
+    "zone.js": "~0.10.3",
+    "apollo-angular-link-http": "^1.11.0",
+    "apollo-link": "^1.2.11",
+    "apollo-client": "^2.6.0",
+    "apollo-cache-inmemory": "^1.6.0",
+    "graphql-tag": "^2.10.0",
+    "graphql": "^14.6.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1000.3",
