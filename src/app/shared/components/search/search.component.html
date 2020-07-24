@@ -1,1 +1,4 @@
-
+<form [formGroup]="addressForm">
+  <input type="text" formControlName="address">
+  <button name="btnSearch" (click)="onSubmit()">Pesquisar</button>
+</form>
