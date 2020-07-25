@@ -4,7 +4,7 @@
     <div *ngFor="let productVariant of product?.productVariants">
       <p>{{ product?.title }}</p>
       <p> Valor original R$ {{ productVariant?.price }}</p>
-      <p> R$ {{ price ? price : productVariant?.price }}</p>
+      <p> {{ price ? (price | currency:'BRL':'symbol':'1.2-2' ) : (productVariant?.price | currency:'BRL':'symbol':'1.2-2') }}</p>
       <button (click)="decreasesPrice(productVariant?.price)">SUB</button>
       <p>{{ unit }}</p>
       <button (click)="increasesPrice(productVariant?.price)">SUM</button>
