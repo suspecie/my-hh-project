@@ -1,3 +1,4 @@
+import { BreadcrumbModule } from './../../shared/components/breadcrumb/breadcrumb.module';
 import { CardProductModule } from './../../shared/components/card-product/card-product.module';
 import { BoxProductModule } from './../../shared/components/box-product/box-product.module';
 import { AllCategoryService } from './../../core/services/all-category.service';
@@ -13,6 +14,7 @@ import { NgModule } from '@angular/core';
     ProductsRoutingModule,
     CardProductModule,
     BoxProductModule,
+    BreadcrumbModule,
     FooterModule,
     HeaderModule,
     CommonModule,

@@ -1,5 +1,7 @@
 <app-header></app-header>
+
 <ng-container *ngIf="idPoc; else notProduct">
+  <app-breadcrumb [idPoc]="idPoc" [isAllProductsRoute]="false"></app-breadcrumb>
   <ng-container *ngFor="let category of categories">
     <app-box-product>
       <p>Categoria: {{ category?.title }}</p>

@@ -1,5 +1,6 @@
 <app-header></app-header>
 <ng-container *ngIf="idPoc; else notProduct">
+<app-breadcrumb [idPoc]="idPoc" [isAllProductsRoute]="true"></app-breadcrumb>
   <app-box-product>
     <app-card-product [idPoc]="idPoc"></app-card-product>
   </app-box-product>

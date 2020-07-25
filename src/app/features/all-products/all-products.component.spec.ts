@@ -1,10 +1,11 @@
-import { RouterTestingModule } from '@angular/router/testing';
-import { Apollo } from 'apollo-angular';
+import { CardProductModule } from './../../shared/components/card-product/card-product.module';
+import { BoxProductModule } from './../../shared/components/box-product/box-product.module';
+import { BreadcrumbModule } from './../../shared/components/breadcrumb/breadcrumb.module';
 import { HeaderModule } from './../../core/components/header/header.module';
 import { FooterModule } from './../../core/components/footer/footer.module';
-import { BoxProductModule } from './../../shared/components/box-product/box-product.module';
-import { CardProductModule } from './../../shared/components/card-product/card-product.module';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { Apollo } from 'apollo-angular';
 
 import { AllProductsComponent } from './all-products.component';
 
@@ -19,6 +20,7 @@ describe('AllProductsComponent', () => {
         RouterTestingModule,
         CardProductModule,
         BoxProductModule,
+        BreadcrumbModule,
         FooterModule,
         HeaderModule,
       ],
