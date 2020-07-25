@@ -1,3 +1,4 @@
+import { AllCategoryService } from './../../core/services/all-category.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() {}
+  public categories = [];
+
+  constructor(
+    private allCategoryService: AllCategoryService,
+  ) {}
 
   ngOnInit(): void {
     const data = history && history.state && history.state.data ? history.state.data : '';
+    this.getAllCategoriesProducts();
   }
 
+  private getAllCategoriesProducts(): void {
+    this.allCategoryService.getAllCategories()
+      .subscribe((resp) => {
+        this.categories = resp.data.allCategory;
+      });
+  }
 }

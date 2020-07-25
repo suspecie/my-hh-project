@@ -1,5 +1,9 @@
 <app-header></app-header>
-<app-box-product>
-  <app-card-product></app-card-product>
-</app-box-product>
+<ng-container *ngFor="let category of categories">
+  <app-box-product>
+    <p>Categoria: {{ category?.title }}</p>
+    <app-card-product></app-card-product>
+  </app-box-product>
+</ng-container>
+
 <app-footer></app-footer>

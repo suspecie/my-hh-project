@@ -1,6 +1,6 @@
-import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
+import { Observable } from 'rxjs';
 // tslint:disable-next-line: import-name
 import gql from 'graphql-tag';
 

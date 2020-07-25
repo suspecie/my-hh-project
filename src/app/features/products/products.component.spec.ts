@@ -1,3 +1,5 @@
+import { Apollo } from 'apollo-angular';
+import { AllCategoryService } from './../../core/services/all-category.service';
 import { CardProductModule } from './../../shared/components/card-product/card-product.module';
 import { BoxProductModule } from './../../shared/components/box-product/box-product.module';
 import { HeaderModule } from './../../core/components/header/header.module';
@@ -18,6 +20,10 @@ describe('ProductsComponent', () => {
         BoxProductModule,
         FooterModule,
         HeaderModule,
+      ],
+      providers: [
+        AllCategoryService,
+        Apollo,
       ],
     })
     .compileComponents();
