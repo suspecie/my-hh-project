@@ -1,3 +1,4 @@
+import { RouterTestingModule } from '@angular/router/testing';
 import { Apollo } from 'apollo-angular';
 import { HeaderModule } from './../../core/components/header/header.module';
 import { FooterModule } from './../../core/components/footer/footer.module';
@@ -15,6 +16,7 @@ describe('AllProductsComponent', () => {
     TestBed.configureTestingModule({
       declarations: [AllProductsComponent],
       imports: [
+        RouterTestingModule,
         CardProductModule,
         BoxProductModule,
         FooterModule,

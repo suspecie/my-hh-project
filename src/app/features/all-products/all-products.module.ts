@@ -3,8 +3,9 @@ import { CardProductModule } from './../../shared/components/card-product/card-p
 import { HeaderModule } from './../../core/components/header/header.module';
 import { FooterModule } from './../../core/components/footer/footer.module';
 import { AllProductsRoutingModule } from './all-products-routing.module';
-import { NgModule } from '@angular/core';
 import { AllProductsComponent } from './all-products.component';
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
 @NgModule({
   declarations: [AllProductsComponent],
@@ -14,6 +15,7 @@ import { AllProductsComponent } from './all-products.component';
     BoxProductModule,
     FooterModule,
     HeaderModule,
+    CommonModule,
   ],
 })
 export class AllProductsModule { }

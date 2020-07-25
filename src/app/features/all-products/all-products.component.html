@@ -1,5 +1,12 @@
 <app-header></app-header>
-<app-box-product>
-  <app-card-product></app-card-product>
-</app-box-product>
+<ng-container *ngIf="idPoc; else notProduct">
+  <app-box-product>
+    <app-card-product [idPoc]="idPoc"></app-card-product>
+  </app-box-product>
+</ng-container>
 <app-footer></app-footer>
+
+<ng-template #notProduct>
+  Ops, nenhum produto foi encontrado, faça a pesquisa novamente!
+  <button (click)="goToHome()"> Ir para Home </button>
+</ng-template>

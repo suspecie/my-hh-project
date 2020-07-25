@@ -27,6 +27,8 @@ export class CardProductComponent implements OnInit {
   private getProducts(): void {
     if (this.idCategory) {
       this.getProductsByCategory(this.idCategory);
+    } else {
+      this.getAllProducts();
     }
   }
 
@@ -35,6 +37,13 @@ export class CardProductComponent implements OnInit {
     .subscribe((resp) => {
       this.products = resp.data.poc.products;
     });
+  }
+
+  private getAllProducts(): void {
+    this.productsService.getAllProducts(this.idPoc)
+      .subscribe((resp) => {
+        this.products = resp.data.poc.products;
+      });
   }
 
 }

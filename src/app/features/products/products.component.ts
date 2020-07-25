@@ -27,6 +27,10 @@ export class ProductsComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
+  public goToAllProducts(): void {
+    this.router.navigate(['/produtos/todos'], { state: { data: { pocId: this.idPoc } } });
+  }
+
   private getAllCategoriesProducts(): void {
     this.allCategoryService.getAllCategories()
       .subscribe((resp) => {
