@@ -1,5 +1,6 @@
 import { ProductsService } from './../../../core/services/products.service';
 import { Component, OnInit, Input } from '@angular/core';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-card-product',
@@ -34,8 +35,14 @@ export class CardProductComponent implements OnInit {
 
   private getProductsByCategory(idCategory: number): void {
     this.productsService.getProductsByCategory(this.idPoc, idCategory)
-    .subscribe((resp) => {
-      this.products = resp.data.poc.products;
+    .pipe(
+      map((resp) => {
+        return resp.data.poc.products
+          .filter((products, i) => i <= 4);
+      }),
+    )
+    .subscribe((limitedProduct) => {
+      this.products = limitedProduct;
     });
   }
 
