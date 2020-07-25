@@ -1,6 +1,6 @@
 <div *ngFor="let product of products">
   <div *ngFor="let image of product?.images">
-    <img [src]="image?.url" [alt]="product?.title"/>
+    <img [src]="image?.url" onerror="this.onerror=null;this.src='../../../../assets/images/icons/img-not-found.svg';" [alt]="product?.title"/>
     <div *ngFor="let productVariant of product?.productVariants">
       <p>{{ product?.title }}</p>
       <p> Valor original R$ {{ productVariant?.price }}</p>
