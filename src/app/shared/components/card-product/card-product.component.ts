@@ -17,12 +17,29 @@ export class CardProductComponent implements OnInit {
 
   public products = [];
 
+  public unit = 1;
+
+  public price: number;
+
   constructor(
     private productsService: ProductsService,
   ) { }
 
   ngOnInit(): void {
+    this.unit = 1;
     this.getProducts();
+  }
+
+  public decreasesPrice(defaultPrice: number): void {
+    if (this.unit > 1) {
+      this.unit -= 1;
+      this.price = defaultPrice * this.unit;
+    }
+  }
+
+  public increasesPrice(defaultPrice: number): void {
+    this.unit += 1;
+    this.price = defaultPrice * this.unit;
   }
 
   private getProducts(): void {
