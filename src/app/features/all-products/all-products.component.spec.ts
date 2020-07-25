@@ -1,3 +1,4 @@
+import { Apollo } from 'apollo-angular';
 import { HeaderModule } from './../../core/components/header/header.module';
 import { FooterModule } from './../../core/components/footer/footer.module';
 import { BoxProductModule } from './../../shared/components/box-product/box-product.module';
@@ -18,6 +19,9 @@ describe('AllProductsComponent', () => {
         BoxProductModule,
         FooterModule,
         HeaderModule,
+      ],
+      providers: [
+        Apollo,
       ],
     })
     .compileComponents();

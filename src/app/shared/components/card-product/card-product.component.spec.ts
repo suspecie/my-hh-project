@@ -1,3 +1,5 @@
+import { Apollo } from 'apollo-angular';
+import { ProductsService } from './../../../core/services/products.service';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CardProductComponent } from './card-product.component';
@@ -9,6 +11,10 @@ describe('CardProductComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [CardProductComponent],
+      providers: [
+        ProductsService,
+        Apollo,
+      ],
     })
     .compileComponents();
   }));

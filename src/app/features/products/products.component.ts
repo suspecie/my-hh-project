@@ -1,5 +1,6 @@
 import { AllCategoryService } from './../../core/services/all-category.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -10,13 +11,20 @@ export class ProductsComponent implements OnInit {
 
   public categories = [];
 
+  public idPoc: string;
+
   constructor(
     private allCategoryService: AllCategoryService,
+    private router: Router,
   ) {}
 
   ngOnInit(): void {
-    const data = history && history.state && history.state.data ? history.state.data : '';
+    this.idPoc = history && history.state && history.state.data ? history.state.data.pocId : '';
     this.getAllCategoriesProducts();
+  }
+
+  public goToHome(id: string): void {
+    this.router.navigate(['/']);
   }
 
   private getAllCategoriesProducts(): void {
@@ -25,4 +33,5 @@ export class ProductsComponent implements OnInit {
         this.categories = resp.data.allCategory;
       });
   }
+
 }

@@ -1,1 +1,10 @@
-
+<div *ngFor="let product of products">
+  <div *ngFor="let image of product?.images">
+    <img [src]="image?.url" [alt]="product?.title"/>
+    <div *ngFor="let productVariant of product?.productVariants">
+      <p>{{ product?.title }}</p>
+      <p>R$ {{ productVariant?.price }}</p>
+      <p> Unidade</p>
+    </div>
+  </div>
+</div>
