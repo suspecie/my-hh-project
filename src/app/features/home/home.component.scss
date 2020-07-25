@@ -1,0 +1,22 @@
+@import '../../../assets/styles/core.scss';
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__image {
+    width: 250px;
+    margin: $spacing-xl 0;
+  }
+
+  &__title--primary {
+    font-weight: $font-medium;
+  }
+
+  &__title--secondary {
+    font-weight: $font-light;
+  }
+
+}

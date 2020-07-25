@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+
+
+
+html, body {
+  background-color: $hh-brand-primary;
+  font-weight: $font-regular;
+  color: $hh-brand-secondary;
+  font-family: $base-font;
+  justify-content: center;
+  flex-wrap: wrap;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
