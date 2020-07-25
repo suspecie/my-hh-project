@@ -1,3 +1,4 @@
+import { RouterTestingModule } from '@angular/router/testing';
 import { Apollo } from 'apollo-angular';
 import { PocSearchService } from './../../../core/services/poc-search.service';
 import { GeocodeService } from './../../../core/services/geocode.service';
@@ -6,6 +7,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchComponent } from './search.component';
+import { Router } from '@angular/router';
 
 describe('SearchComponent', () => {
   let component: SearchComponent;
@@ -16,6 +18,7 @@ describe('SearchComponent', () => {
       declarations: [SearchComponent],
       imports: [
         ReactiveFormsModule,
+        RouterTestingModule,
         HttpClientModule,
       ],
       providers: [

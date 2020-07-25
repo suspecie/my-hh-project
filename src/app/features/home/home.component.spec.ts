@@ -1,3 +1,4 @@
+import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { Apollo } from 'apollo-angular';
 import { SearchModule } from './../../shared/components/search/search.module';
@@ -6,6 +7,7 @@ import { FooterModule } from './../../core/components/footer/footer.module';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
+import { Router } from '@angular/router';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -15,6 +17,7 @@ describe('HomeComponent', () => {
     TestBed.configureTestingModule({
       declarations: [HomeComponent],
       imports: [
+        RouterTestingModule,
         HttpClientModule,
         FooterModule,
         HeaderModule,
