@@ -2,17 +2,22 @@
 
 .footer {
   background-color: $hh-brand-secondary;
-  justify-content: space-between;
-  flex-direction: column;
-  padding: 0 $spacing-md;
   display: flex;
   flex: 0 0 auto;
-  width: 100%;
 
-  @media screen and (min-width: $sm) {
-    padding: 0 $spacing-2xl;
-    flex-direction: row;
+  &__container {
+    justify-content: space-between;
+    width: 100%;
+    max-width: $md;
+    margin: 0 auto;
+    flex-direction: column;
+    display: flex;
+    padding: 0 $spacing-md;
 
+    @media screen and (min-width: $sm) {
+      padding: 0 $spacing-2xl;
+      flex-direction: row;
+    }
   }
 
   &__social-link {

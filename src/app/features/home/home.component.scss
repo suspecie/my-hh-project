@@ -13,6 +13,9 @@
   justify-content: center;
   display: flex;
   flex: 1 1 auto;
+  width: 100%;
+  max-width: $md;
+  margin: 0 auto;
 
   @media screen and (min-width: $sm) {
     padding: 0 $spacing-2xl;

@@ -3,14 +3,21 @@
 .header {
   background-color: $hh-brand-secondary;
   justify-content: space-between;
-  padding: 0 $spacing-md;
   min-height: 70px;
   max-height: 70px;
   display: flex;
   flex: 0 0 auto;
 
-  @media screen and (min-width: $sm) {
-    padding: 0 $spacing-2xl;
+  &__container {
+    width: 100%;
+    max-width: $md;
+    margin: 0 auto;
+    display: flex;
+    padding: 0 $spacing-md;
+
+    @media screen and (min-width: $sm) {
+      padding: 0 $spacing-2xl;
+    }
   }
 
   &__logo {
