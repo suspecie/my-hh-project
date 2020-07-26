@@ -1,0 +1,76 @@
+@import '../../../../assets/styles/core.scss';
+
+.footer {
+  background-color: $hh-brand-secondary;
+  justify-content: space-between;
+  padding: 0 $spacing-2xl;
+  min-height: 90px;
+  position: fixed;
+  display: flex;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+
+  &__social-link {
+    justify-content: center;
+    flex-direction: column;
+    margin: $spacing-sm 0;
+    align-items: center;
+    display: flex;
+  }
+
+  &__social-link--title {
+    color: $hh-brand-secondary-light;
+    display: flex;
+    margin: 0;
+  }
+
+  &__social-link--list {
+    flex-direction: row;
+    display: flex;
+    margin: $spacing-sm 0 0 0;
+  }
+
+  &__social-link--list-item:first-child {
+    width: $spacing-xl;
+    margin-left: 0;
+  }
+
+  &__social-link--list-item {
+    width: $spacing-xl;
+    margin: 0 $spacing-sm;
+  }
+
+  &___social-link--list-item:last-child {
+    width: $spacing-xl;
+    margin-right: 0;
+  }
+
+  &__attributions {
+    color: $hh-brand-secondary-light;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end;
+    display: flex;
+
+    &--paragraph {
+      font-size: 12px;
+      font-weight: $font-light;
+      margin: $spacing-sm 0;
+    }
+
+    &--paragraph:first-child {
+      margin-bottom: 0;
+    }
+
+    &--paragraph:last-child {
+      margin-top: 0;
+    }
+  }
+
+  &__atributtions--link {
+    color: $hh-brand-secondary-light;
+    text-decoration: underline;
+  }
+
+}
