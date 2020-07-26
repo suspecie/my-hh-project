@@ -1,6 +1,9 @@
 <form [formGroup]="addressForm">
-  <input type="text" formControlName="address">
-  <button name="btnSearch" (click)="onSubmit()">Pesquisar</button>
+  <div class="search__group">
+    <input class="search__group--input" type="text" formControlName="address">
+    <button class="search__group--button" name="btnSearch" (click)="onSubmit()">Buscar</button>
+  </div>
+
   <div *ngFor="let poc of pocs">
     <div (click)="goToProducts(poc.id)">
       <p>{{ poc?.tradingName }}</p>
@@ -8,3 +11,4 @@
     </div>
   </div>
 </form>
+

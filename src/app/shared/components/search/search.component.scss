@@ -1,0 +1,33 @@
+@import '../../../../assets/styles/core.scss';
+
+.search__group {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+
+  &--input {
+    border-radius: 16px;
+    border: 0px;
+    box-shadow: 2px 3px 3px 0px $hh-brand-shadow;
+    padding: 0 $spacing-md;
+    height: 48px;
+    margin-right: $spacing-sm;
+    width: 70%;
+
+    @media screen and (min-width: $sm) {
+      width: 75%;
+    }
+  }
+
+  &--input:focus {
+    outline: none;
+  }
+
+  &--button {
+    width: 30%;
+
+    @media screen and (min-width: $sm) {
+      width: 25%;
+    }
+  }
+}

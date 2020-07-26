@@ -26,7 +26,17 @@
 
     @media screen and (min-width: $sm) {
       display: flex;
-      width: 225px;
+      width: 150px;
+    }
+
+    @media screen and (min-width: $md) {
+      display: flex;
+      width: 250px;
+    }
+
+    @media screen and (min-width: $xl) {
+      display: flex;
+      width: 350px;
     }
   }
 
@@ -40,6 +50,11 @@
 
   &__title--secondary {
     font-weight: $font-light;
+  }
+
+  &__search {
+    width: 100%;
+    margin: $spacing-md 0;
   }
 
 }

@@ -33,3 +33,27 @@ ul {
 ul, li {
   list-style: none;
 }
+
+button {
+  font-size: 14px;
+  background-color: $hh-brand-tertiary-light;
+  border: 0;
+  border-radius: $spacing-md;
+  color: $hh-brand-secondary-light;
+  font-weight: 500;
+  text-transform: uppercase;
+  box-shadow: 2px 3px 3px 0px $hh-brand-shadow;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover {
+  background-color: $hh-brand-tertiary;
+}
+
+button:active {
+  background-color: $hh-brand-tertiary;
+  transform: translateY(2px);
+}
