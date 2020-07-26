@@ -31,3 +31,30 @@
     }
   }
 }
+
+.search__result {
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  border-radius: 16px;
+  top: 52px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  max-height: 125px;
+
+  @media screen and (min-width: $md) {
+    max-height: 225px;
+  }
+
+  &--item {
+    padding: 16px;
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  &--item:hover {
+    background-color: $hh-brand-primary-light;
+  }
+
+}

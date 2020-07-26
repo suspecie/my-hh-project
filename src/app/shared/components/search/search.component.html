@@ -4,10 +4,11 @@
     <button class="search__group--button" name="btnSearch" (click)="onSubmit()">Buscar</button>
   </div>
 
-  <div *ngFor="let poc of pocs">
-    <div (click)="goToProducts(poc.id)">
+  <div class="search__result" *ngFor="let poc of pocs">
+    <div class="search__result--item" (click)="goToProducts(poc.id)">
       <p>{{ poc?.tradingName }}</p>
       <p>{{ poc?.address?.address1 }} {{ poc?.address?.address2}}, {{ poc?.address?.number}} - {{ poc?.address?.city }}/{{ poc?.address?.province}}</p>
+      <hr>
     </div>
   </div>
 </form>

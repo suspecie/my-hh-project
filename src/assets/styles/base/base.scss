@@ -57,3 +57,7 @@ button:active {
   background-color: $hh-brand-tertiary;
   transform: translateY(2px);
 }
+
+hr {
+  border-top: 1px solid $hh-brand-primary;
+}
