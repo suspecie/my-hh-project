@@ -1,18 +1,38 @@
 @import '../../../assets/styles/core.scss';
 
-.home {
-  display: flex;
+.container {
   flex-direction: column;
+  height: 100vh;
+  display: flex;
+}
+
+.home {
   justify-content: center;
+  flex-direction: column;
+  padding: 0 $spacing-md;
   align-items: center;
+  display: flex;
+  flex: 1;
+
+  @media screen and (min-width: $sm) {
+    padding: 0 $spacing-2xl;
+  }
 
   &__image {
-    width: 250px;
-    margin: $spacing-xl 0;
+    display: none;
+
+    @media screen and (min-width: $sm) {
+      display: flex;
+      width: 225px;
+    }
   }
 
   &__title--primary {
     font-weight: $font-medium;
+
+    @media screen and (min-width: $sm) {
+      text-align: center;
+    }
   }
 
   &__title--secondary {

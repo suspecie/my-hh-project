@@ -6,11 +6,8 @@
   padding: 0 $spacing-md;
   min-height: 70px;
   max-height: 70px;
-  position: fixed;
   display: flex;
-  width: 100%;
-  right: 0;
-  top: 0;
+  flex: 0 0 auto;
 
   @media screen and (min-width: $sm) {
     padding: 0 $spacing-2xl;

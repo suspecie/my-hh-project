@@ -5,16 +5,14 @@
   justify-content: space-between;
   flex-direction: column;
   padding: 0 $spacing-md;
-  min-height: 90px;
-  position: fixed;
   display: flex;
+  flex: 0 0 auto;
   width: 100%;
-  bottom: 0;
-  right: 0;
 
   @media screen and (min-width: $sm) {
     padding: 0 $spacing-2xl;
     flex-direction: row;
+
   }
 
   &__social-link {
