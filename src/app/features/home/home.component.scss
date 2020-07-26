@@ -7,12 +7,12 @@
 }
 
 .home {
-  justify-content: center;
   flex-direction: column;
   padding: 0 $spacing-md;
   align-items: center;
+  justify-content: center;
   display: flex;
-  flex: 1;
+  flex: 1 1 auto;
 
   @media screen and (min-width: $sm) {
     padding: 0 $spacing-2xl;
