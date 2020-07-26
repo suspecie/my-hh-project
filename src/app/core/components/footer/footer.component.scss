@@ -3,13 +3,19 @@
 .footer {
   background-color: $hh-brand-secondary;
   justify-content: space-between;
-  padding: 0 $spacing-2xl;
+  flex-direction: column;
+  padding: 0 $spacing-md;
   min-height: 90px;
   position: fixed;
   display: flex;
   width: 100%;
   bottom: 0;
   right: 0;
+
+  @media screen and (min-width: $sm) {
+    padding: 0 $spacing-2xl;
+    flex-direction: row;
+  }
 
   &__social-link {
     justify-content: center;
@@ -26,9 +32,9 @@
   }
 
   &__social-link--list {
+    margin: $spacing-sm 0 0 0;
     flex-direction: row;
     display: flex;
-    margin: $spacing-sm 0 0 0;
   }
 
   &__social-link--list-item:first-child {
@@ -37,8 +43,8 @@
   }
 
   &__social-link--list-item {
-    width: $spacing-xl;
     margin: 0 $spacing-sm;
+    width: $spacing-xl;
   }
 
   &___social-link--list-item:last-child {
@@ -50,8 +56,12 @@
     color: $hh-brand-secondary-light;
     justify-content: center;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     display: flex;
+
+    @media screen and (min-width: $sm) {
+      align-items: flex-end;
+    }
 
     &--paragraph {
       font-size: 12px;
@@ -72,5 +82,8 @@
     color: $hh-brand-secondary-light;
     text-decoration: underline;
   }
+
+
+
 
 }

@@ -3,13 +3,18 @@
 .header {
   background-color: $hh-brand-secondary;
   justify-content: space-between;
-  padding: 0 $spacing-2xl;
+  padding: 0 $spacing-md;
+  min-height: 70px;
+  max-height: 70px;
   position: fixed;
   display: flex;
-  min-height: 70px;
   width: 100%;
   right: 0;
   top: 0;
+
+  @media screen and (min-width: $sm) {
+    padding: 0 $spacing-2xl;
+  }
 
   &__logo {
     display: flex;
@@ -29,13 +34,14 @@
   }
 
   &__paragraph {
-    color: $hh-brand-secondary-light;
-    font-weight: $font-medium;
-    align-items: flex-end;
-    display: flex;
+    display: none;
 
-    @media screen and (max-width: $sm) {
-      display: none;
+    @media screen and (min-width: $sm) {
+      color: $hh-brand-secondary-light;
+      font-weight: $font-medium;
+      align-items: flex-end;
+      display: flex;
     }
+
   }
 }
