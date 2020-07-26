@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,4 +6,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './error-page.component.html',
   styleUrls: ['./error-page.component.scss'],
 })
-export class ErrorPageComponent {}
+export class ErrorPageComponent {
+
+  constructor(private router: Router) { }
+
+  public goToHome(): void {
+    this.router.navigate(['/']);
+  }
+
+}

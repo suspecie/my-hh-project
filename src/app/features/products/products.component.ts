@@ -23,7 +23,7 @@ export class ProductsComponent implements OnInit {
     this.getAllCategoriesProducts();
   }
 
-  public goToHome(id: string): void {
+  public goToHome(): void {
     this.router.navigate(['/']);
   }
 

@@ -16,7 +16,7 @@ export class AllProductsComponent implements OnInit {
     this.idPoc = history && history.state && history.state.data ? history.state.data.pocId : '';
   }
 
-  public goToHome(id: string): void {
+  public goToHome(): void {
     this.router.navigate(['/']);
   }
 
