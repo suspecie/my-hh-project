@@ -1,24 +1,31 @@
-<app-header></app-header>
+<section class="products__container">
+  <app-header></app-header>
 
-<ng-container *ngIf="idPoc; else notProduct">
-  <app-breadcrumb [idPoc]="idPoc" [isAllProductsRoute]="false"></app-breadcrumb>
-  <ng-container *ngFor="let category of categories">
-    <app-box-product>
-      <p>Categoria: {{ category?.title }}</p>
+  <div class="products__items">
+    <ng-container *ngIf="idPoc; else notProduct">
+      <app-breadcrumb [idPoc]="idPoc" [isAllProductsRoute]="false"></app-breadcrumb>
+      <ng-container *ngFor="let category of categories">
+        <app-box-product>
+          <p>Categoria: {{ category?.title }}</p>
 
-      <app-card-product
-        [idCategory]="category?.id"
-        [idPoc]="idPoc">
-      </app-card-product>
+          <app-card-product
+            [idCategory]="category?.id"
+            [idPoc]="idPoc">
+          </app-card-product>
 
-      <button (click)="goToAllProducts()">Ver todos</button>
-    </app-box-product>
-  </ng-container>
-</ng-container>
+          <button (click)="goToAllProducts()">Ver todos</button>
+        </app-box-product>
+      </ng-container>
+    </ng-container>
+  </div>
 
-<app-footer></app-footer>
+  <app-footer></app-footer>
 
-<ng-template #notProduct>
-  Ops, nenhum produto foi encontrado, faça a pesquisa novamente!
-  <button (click)="goToHome()"> Ir para Home </button>
-</ng-template>
+  <ng-template #notProduct>
+    <div class="products__not-products">
+      <h2>Ops, nenhum produto foi encontrado, faça a pesquisa novamente!</h2>
+      <button class="products__not-products--button" (click)="goToHome()" > Ir para Home </button>
+    </div>
+  </ng-template>
+
+</section>

@@ -1,13 +1,24 @@
-<app-header></app-header>
-<ng-container *ngIf="idPoc; else notProduct">
-<app-breadcrumb [idPoc]="idPoc" [isAllProductsRoute]="true"></app-breadcrumb>
-  <app-box-product>
-    <app-card-product [idPoc]="idPoc"></app-card-product>
-  </app-box-product>
-</ng-container>
-<app-footer></app-footer>
+<section class="all-products__container">
+  <app-header></app-header>
 
-<ng-template #notProduct>
-  Ops, nenhum produto foi encontrado, faça a pesquisa novamente!
-  <button (click)="goToHome()"> Ir para Home </button>
-</ng-template>
+  <div class="all-products__items">
+    <ng-container *ngIf="idPoc; else notProduct">
+      <app-breadcrumb [idPoc]="idPoc" [isAllProductsRoute]="true"></app-breadcrumb>
+      <app-box-product>
+        <app-card-product [idPoc]="idPoc"></app-card-product>
+      </app-box-product>
+    </ng-container>
+  </div>
+
+  <app-footer></app-footer>
+
+  <ng-template #notProduct>
+    <div class="all-products__not-products">
+      <h2> Ops, nenhum produto foi encontrado, faça a pesquisa novamente!</h2>
+      <button class="all-products__not-products--button" (click)="goToHome()"> Ir para Home </button>
+    </div>
+  </ng-template>
+
+</section>
+
+
