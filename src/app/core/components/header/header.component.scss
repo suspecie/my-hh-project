@@ -1,6 +1,41 @@
 @import '../../../../assets/styles/core.scss';
 
-div {
-  background-color: $hh-brand-secondary;;
-  height: 70px;
+.header {
+  background-color: $hh-brand-secondary;
+  justify-content: space-between;
+  padding: 0 $spacing-2xl;
+  position: fixed;
+  display: flex;
+  min-height: 70px;
+  width: 100%;
+  right: 0;
+  top: 0;
+
+  &__logo {
+    display: flex;
+    flex: 1;
+
+    &--image {
+      max-width: 48px;
+    }
+
+    &--name {
+      color: $hh-brand-secondary-light;
+      font-weight: $font-medium;
+      padding-left: $spacing-sm;
+      align-items: flex-end;
+      display: flex;
+    }
+  }
+
+  &__paragraph {
+    color: $hh-brand-secondary-light;
+    font-weight: $font-medium;
+    align-items: flex-end;
+    display: flex;
+
+    @media screen and (max-width: $sm) {
+      display: none;
+    }
+  }
 }
