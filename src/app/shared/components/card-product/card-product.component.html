@@ -1,13 +1,25 @@
-<div *ngFor="let product of products">
-  <div *ngFor="let image of product?.images">
-    <img [src]="image?.url" onerror="this.onerror=null;this.src='../../../../assets/images/icons/img-not-found.svg';" [alt]="product?.title"/>
-    <div *ngFor="let productVariant of product?.productVariants">
-      <p>{{ product?.title }}</p>
-      <p> Valor original R$ {{ productVariant?.price }}</p>
-      <p> {{ price ? (price | currency:'BRL':'symbol':'1.2-2' ) : (productVariant?.price | currency:'BRL':'symbol':'1.2-2') }}</p>
-      <button (click)="decreasesPrice(productVariant?.price)">SUB</button>
-      <p>{{ unit }}</p>
-      <button (click)="increasesPrice(productVariant?.price)">SUM</button>
-    </div>
-  </div>
-</div>
+<section class="card__container">
+  <ng-container *ngFor="let product of products">
+    <ng-container *ngFor="let image of product?.images">
+
+      <figure class="card__figure">
+        <img class="card__figure--image" [src]="image?.url" onerror="this.onerror=null;this.src='../../../../assets/images/icons/img-not-found.svg';" [alt]="product?.title"/>
+
+        <ng-container *ngFor="let productVariant of product?.productVariants">
+          <figcaption>
+            <p class="card__figure--product-name">{{ product?.title }}</p>
+            <p class="card__figure--price"> {{ price ? (price | currency:'BRL':'symbol':'1.2-2' ) : (productVariant?.price | currency:'BRL':'symbol':'1.2-2') }}</p>
+          </figcaption>
+
+          <div class="card__quantity">
+            <button class="card__quantity--button" (click)="decreasesPrice(productVariant?.price)">-</button>
+            <p>{{ unit }}</p>
+            <button class="card__quantity--button" (click)="increasesPrice(productVariant?.price)">+</button>
+          </div>
+        </ng-container>
+
+      </figure>
+
+    </ng-container>
+  </ng-container>
+</section>

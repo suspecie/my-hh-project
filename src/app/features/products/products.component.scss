@@ -29,7 +29,7 @@
 }
 
 .products__items {
-  overflow-y: scroll;
+  overflow: auto;
   height: 100vh;
   width: 100%;
   max-width: $md;

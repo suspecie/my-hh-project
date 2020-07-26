@@ -1,0 +1,41 @@
+@import '../../../../assets/styles/core.scss';
+
+.card__container {
+  flex-direction: row;
+  display: flex;
+}
+
+.card__figure {
+  background-color: $hh-brand-secondary-light;
+  border-radius: 16px;
+  padding: $spacing-lg;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid $hh-brand-secondary;
+  margin: $spacing-lg;
+
+  &--product-name {
+    font-size: 14px;
+    font-weight: $font-medium;
+  }
+
+  &--price {
+    font-size: 22px;
+    font-weight: $font-medium;
+  }
+}
+
+.card__figure--image {
+  max-width: 150px;
+}
+
+.card__quantity {
+  display: flex;
+  justify-content: space-between;
+
+  &--button {
+    width: 48px;
+  }
+}
+
+
