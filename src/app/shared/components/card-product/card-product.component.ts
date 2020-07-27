@@ -21,6 +21,8 @@ export class CardProductComponent implements OnInit {
 
   public price = [];
 
+  public isErrorImage = [];
+
   constructor(
     private productsService: ProductsService,
   ) { }

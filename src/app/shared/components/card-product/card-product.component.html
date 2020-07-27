@@ -1,25 +1,31 @@
 <section class="card__container">
-  <ng-container *ngFor="let product of products; let i = index;">
-    <ng-container *ngFor="let image of product?.images">
+  <ng-container *ngIf="products?.length > 0; else notProducts" >
+    <ng-container *ngFor="let product of products; let i = index;">
+      <ng-container *ngFor="let image of product?.images">
 
-      <figure class="card__figure">
-        <img class="card__figure--image" [src]="image?.url" onerror="this.onerror=null;this.src='../../../../assets/images/icons/img-not-found.svg';" [alt]="product?.title"/>
+        <figure class="card__figure">
+          <img  [ngClass]="{'card__figure--opacity': isErrorImage[i]}" class="card__figure--image" [src]="isErrorImage[i] ? '../../../../assets/images/icons/logo.svg': image?.url" (error)="isErrorImage[i] = true" [alt]="product?.title"/>
 
-        <ng-container *ngFor="let productVariant of product?.productVariants">
-          <figcaption>
-            <p class="card__figure--product-name">{{ product?.title }}</p>
-            <p class="card__figure--price"> {{ price[i] ? (price[i] | currency:'BRL':'symbol':'1.2-2' ) : (productVariant?.price | currency:'BRL':'symbol':'1.2-2') }}</p>
-          </figcaption>
+          <ng-container *ngFor="let productVariant of product?.productVariants">
+            <figcaption>
+              <p class="card__figure--product-name">{{ product?.title }}</p>
+              <p class="card__figure--price"> {{ price[i] ? (price[i] | currency:'BRL':'symbol':'1.2-2' ) : (productVariant?.price | currency:'BRL':'symbol':'1.2-2') }}</p>
+            </figcaption>
 
-          <div class="card__quantity">
-            <button class="card__quantity--button" (click)="decreasesPrice(productVariant?.price, i)">-</button>
-            <p>{{ unit[i] }}</p>
-            <button class="card__quantity--button" (click)="increasesPrice(productVariant?.price, i)">+</button>
-          </div>
-        </ng-container>
+            <div class="card__quantity">
+              <button class="card__quantity--button" (click)="decreasesPrice(productVariant?.price, i)">-</button>
+              <p>{{ unit[i] }}</p>
+              <button class="card__quantity--button" (click)="increasesPrice(productVariant?.price, i)">+</button>
+            </div>
+          </ng-container>
 
-      </figure>
+        </figure>
 
+      </ng-container>
     </ng-container>
   </ng-container>
+
+  <ng-template #notProducts>
+    <p>Nenhum produto encontrado.</p>
+  </ng-template>
 </section>
