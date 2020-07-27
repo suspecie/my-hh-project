@@ -3,25 +3,34 @@
 .card__container {
   flex-direction: row;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card__figure {
   background-color: $hh-brand-secondary-light;
-  border-radius: 16px;
-  padding: $spacing-lg;
+  border-radius: 8px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  border: 2px solid $hh-brand-secondary;
-  margin: $spacing-lg;
+  margin: 24px;
+  width: 200px;
+  box-shadow: 2px 2px 8px 0px #29292963;
+  justify-content: space-between;
 
   &--product-name {
+    height: 70px;
+    display: flex;
+    align-items: flex-start;
     font-size: 14px;
     font-weight: $font-medium;
+    margin-top: 16px 0 0;
   }
 
   &--price {
     font-size: 22px;
     font-weight: $font-medium;
+    margin: 0;
   }
 }
 
@@ -32,6 +41,7 @@
 .card__quantity {
   display: flex;
   justify-content: space-between;
+  margin-top: 16px;
 
   &--button {
     width: 48px;

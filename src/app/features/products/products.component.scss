@@ -32,11 +32,26 @@
   overflow: auto;
   height: 100vh;
   width: 100%;
+  padding: 0;
+  margin: 0 auto;
+
+  &--title {
+    text-transform: uppercase;
+    font-weight: $font-medium;
+    font-size: 22px;
+    margin-top: 0;
+    text-align: center;
+  }
+}
+
+.products__items--container {
+  height: 100%;
+  padding: 0 16px;
   max-width: $md;
-  padding: 0 $spacing-md;
   margin: 0 auto;
 
   @media screen and (min-width: $sm) {
     padding: 0 $spacing-2xl;
   }
+
 }

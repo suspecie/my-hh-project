@@ -2,21 +2,23 @@
   <app-header></app-header>
 
   <div class="products__items">
-    <ng-container *ngIf="idPoc; else notProduct">
-      <app-breadcrumb [idPoc]="idPoc" [isAllProductsRoute]="false"></app-breadcrumb>
-      <ng-container *ngFor="let category of categories">
-        <app-box-product>
-          <p>Categoria: {{ category?.title }}</p>
+    <div class="products__items--container">
+      <ng-container *ngIf="idPoc; else notProduct">
+        <app-breadcrumb [idPoc]="idPoc" [isAllProductsRoute]="false"></app-breadcrumb>
+        <ng-container *ngFor="let category of categories">
+          <app-box-product>
+            <p class="products__items--title">{{ category?.title }}</p>
 
-          <app-card-product
-            [idCategory]="category?.id"
-            [idPoc]="idPoc">
-          </app-card-product>
+            <app-card-product
+              [idCategory]="category?.id"
+              [idPoc]="idPoc">
+            </app-card-product>
 
-          <button (click)="goToAllProducts()">Ver todos</button>
-        </app-box-product>
+            <button (click)="goToAllProducts()">Ver todos</button>
+          </app-box-product>
+        </ng-container>
       </ng-container>
-    </ng-container>
+    </div>
   </div>
 
   <app-footer></app-footer>
