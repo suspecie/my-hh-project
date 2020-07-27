@@ -1,5 +1,5 @@
 <section class="card__container">
-  <ng-container *ngIf="products?.length > 0; else notProducts" >
+  <ng-container *ngIf="products?.length > 0 && !isLoading; else notProducts" >
     <ng-container *ngFor="let product of products; let i = index;">
       <ng-container *ngFor="let image of product?.images">
 
@@ -25,7 +25,11 @@
     </ng-container>
   </ng-container>
 
-  <ng-template #notProducts>
+  <div *ngIf="isLoading">
+    <div class="loading">Loading...</div>
+  </div>
+
+  <ng-template #notProducts *ngIf="!isLoading">
     <p>Nenhum produto encontrado.</p>
   </ng-template>
 </section>

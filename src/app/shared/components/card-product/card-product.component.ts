@@ -23,6 +23,8 @@ export class CardProductComponent implements OnInit {
 
   public isErrorImage = [];
 
+  public isLoading = false;
+
   constructor(
     private productsService: ProductsService,
   ) { }
@@ -44,6 +46,7 @@ export class CardProductComponent implements OnInit {
   }
 
   private getProducts(): void {
+    this.isLoading = true;
     if (this.idCategory) {
       this.getProductsByCategory(this.idCategory);
     } else {
@@ -65,6 +68,7 @@ export class CardProductComponent implements OnInit {
         .map((prod, i) => {
           this.unit[i] = 1;
         });
+      this.isLoading = false;
     });
   }
 
@@ -76,6 +80,7 @@ export class CardProductComponent implements OnInit {
           .map((prod, i) => {
             this.unit[i] = 1;
           });
+        this.isLoading = false;
       });
   }
 

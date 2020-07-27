@@ -17,6 +17,9 @@
             <button (click)="goToAllProducts()">Ver todos</button>
           </app-box-product>
         </ng-container>
+        <div *ngIf="categories.length <= 0">
+          <div class="loading">Loading...</div>
+        </div>
       </ng-container>
     </div>
   </div>
