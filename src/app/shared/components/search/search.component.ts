@@ -20,6 +20,8 @@ export class SearchComponent {
 
   public isError = false;
 
+  public isCleared = false;
+
   constructor(
     private pocSearchService: PocSearchService,
     private geocodeService: GeocodeService,
@@ -44,6 +46,7 @@ export class SearchComponent {
   public clear(): void {
     this.isLoading = false;
     this.isError = false;
+    this.isCleared = true;
     this.addressForm = this.fb.group({
       address: [''],
     });
@@ -60,6 +63,9 @@ export class SearchComponent {
               addressInfo.results[0].geometry.location.lat,
               addressInfo.results[0].geometry.location.lng,
             );
+          } else {
+            this.isLoading = false;
+            this.isError = true;
           }
         },
         (error) => {
@@ -73,7 +79,13 @@ export class SearchComponent {
     this.pocSearchService.getPoc(lat, long)
       .subscribe((resp) => {
         this.pocs = resp.data.pocSearch;
+
         this.isLoading = false;
+        this.isCleared = false;
+
+        if (resp.data.pocSearch && resp.data.pocSearch.length === 0) {
+          this.isError = true;
+        }
       },
       (error) => {
         this.isError = true;
