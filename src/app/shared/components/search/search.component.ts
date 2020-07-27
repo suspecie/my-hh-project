@@ -13,7 +13,12 @@ import { Router } from '@angular/router';
 export class SearchComponent {
 
   public addressForm: FormGroup;
+
   public pocs: [];
+
+  public isLoading = false;
+
+  public isError = false;
 
   constructor(
     private pocSearchService: PocSearchService,
@@ -27,11 +32,21 @@ export class SearchComponent {
   }
 
   public onSubmit(): void {
+    this.isLoading = true;
+    this.isError = false;
     this.getLatLogByAddress(this.addressForm.value.address);
   }
 
   public goToProducts(id: string): void {
     this.router.navigate(['/produtos'], { state: { data: { pocId: id } } });
+  }
+
+  public clear(): void {
+    this.isLoading = false;
+    this.isError = false;
+    this.addressForm = this.fb.group({
+      address: [''],
+    });
   }
 
   private getLatLogByAddress(address: string): void {
@@ -47,6 +62,10 @@ export class SearchComponent {
             );
           }
         },
+        (error) => {
+          this.isError = true;
+          this.isLoading = false;
+        },
       );
   }
 
@@ -54,6 +73,11 @@ export class SearchComponent {
     this.pocSearchService.getPoc(lat, long)
       .subscribe((resp) => {
         this.pocs = resp.data.pocSearch;
+        this.isLoading = false;
+      },
+      (error) => {
+        this.isError = true;
+        this.isLoading = false;
       });
   }
 }

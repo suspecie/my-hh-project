@@ -3,6 +3,7 @@ import { Apollo } from 'apollo-angular';
 import { Observable } from 'rxjs';
 // tslint:disable-next-line: import-name
 import gql from 'graphql-tag';
+import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class PocSearchService {

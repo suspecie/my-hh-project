@@ -1,15 +1,27 @@
 <form [formGroup]="addressForm">
   <div class="search__group">
     <input class="search__group--input" type="text" formControlName="address">
+    <p class= "search_group--clear" (click)="clear()">X</p>
     <button class="search__group--button" name="btnSearch" (click)="onSubmit()">Buscar</button>
   </div>
 
-  <div class="search__result" *ngFor="let poc of pocs">
-    <div class="search__result--item" (click)="goToProducts(poc.id)">
-      <p>{{ poc?.tradingName }}</p>
-      <p>{{ poc?.address?.address1 }} {{ poc?.address?.address2}}, {{ poc?.address?.number}} - {{ poc?.address?.city }}/{{ poc?.address?.province}}</p>
-      <hr>
+  <ng-container *ngIf="!isLoading && !(isError || (pocs?.length === 0))">
+    <div class="search__result" *ngFor="let poc of pocs">
+      <div class="search__result--item" (click)="goToProducts(poc.id)">
+        <p>{{ poc?.tradingName }}</p>
+        <p>{{ poc?.address?.address1 }} {{ poc?.address?.address2}}, {{ poc?.address?.number}} - {{ poc?.address?.city }}/{{ poc?.address?.province}}</p>
+        <hr>
+      </div>
     </div>
+  </ng-container>
+
+
+  <div class="search__result" *ngIf="isLoading && !(isError || (pocs?.length === 0))">
+    <div class="search__result--loading">Loading...</div>
+  </div>
+
+  <div class="search__result" *ngIf="!isLoading && (isError || (pocs?.length === 0))">
+    <p class="search__result--paragraph"> Endereço não encontrado. Tente novamente.</p>
   </div>
 </form>
 
