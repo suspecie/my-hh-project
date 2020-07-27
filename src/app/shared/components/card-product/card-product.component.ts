@@ -17,29 +17,28 @@ export class CardProductComponent implements OnInit {
 
   public products = [];
 
-  public unit = 1;
+  public unit = [];
 
-  public price: number;
+  public price = [];
 
   constructor(
     private productsService: ProductsService,
   ) { }
 
   ngOnInit(): void {
-    this.unit = 1;
     this.getProducts();
   }
 
-  public decreasesPrice(defaultPrice: number): void {
-    if (this.unit > 1) {
-      this.unit -= 1;
-      this.price = defaultPrice * this.unit;
+  public decreasesPrice(defaultPrice: number, index: number): void {
+    if (this.unit[index] > 1) {
+      this.unit[index] -= 1;
+      this.price[index] = defaultPrice * this.unit[index];
     }
   }
 
-  public increasesPrice(defaultPrice: number): void {
-    this.unit += 1;
-    this.price = defaultPrice * this.unit;
+  public increasesPrice(defaultPrice: number, index: number): void {
+    this.unit[index] += 1;
+    this.price[index] = defaultPrice * this.unit[index];
   }
 
   private getProducts(): void {
@@ -60,6 +59,10 @@ export class CardProductComponent implements OnInit {
     )
     .subscribe((limitedProduct) => {
       this.products = limitedProduct;
+      this.products
+        .map((prod, i) => {
+          this.unit[i] = 1;
+        });
     });
   }
 
@@ -67,6 +70,10 @@ export class CardProductComponent implements OnInit {
     this.productsService.getAllProducts(this.idPoc)
       .subscribe((resp) => {
         this.products = resp.data.poc.products;
+        this.products
+          .map((prod, i) => {
+            this.unit[i] = 1;
+          });
       });
   }
 

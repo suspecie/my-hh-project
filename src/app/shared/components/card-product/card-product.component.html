@@ -1,5 +1,5 @@
 <section class="card__container">
-  <ng-container *ngFor="let product of products">
+  <ng-container *ngFor="let product of products; let i = index;">
     <ng-container *ngFor="let image of product?.images">
 
       <figure class="card__figure">
@@ -8,13 +8,13 @@
         <ng-container *ngFor="let productVariant of product?.productVariants">
           <figcaption>
             <p class="card__figure--product-name">{{ product?.title }}</p>
-            <p class="card__figure--price"> {{ price ? (price | currency:'BRL':'symbol':'1.2-2' ) : (productVariant?.price | currency:'BRL':'symbol':'1.2-2') }}</p>
+            <p class="card__figure--price"> {{ price[i] ? (price[i] | currency:'BRL':'symbol':'1.2-2' ) : (productVariant?.price | currency:'BRL':'symbol':'1.2-2') }}</p>
           </figcaption>
 
           <div class="card__quantity">
-            <button class="card__quantity--button" (click)="decreasesPrice(productVariant?.price)">-</button>
-            <p>{{ unit }}</p>
-            <button class="card__quantity--button" (click)="increasesPrice(productVariant?.price)">+</button>
+            <button class="card__quantity--button" (click)="decreasesPrice(productVariant?.price, i)">-</button>
+            <p>{{ unit[i] }}</p>
+            <button class="card__quantity--button" (click)="increasesPrice(productVariant?.price, i)">+</button>
           </div>
         </ng-container>
 
