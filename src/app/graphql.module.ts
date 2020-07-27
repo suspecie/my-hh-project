@@ -1,9 +1,10 @@
+import { AppSettings } from './../environments/app-settings';
 import { NgModule } from '@angular/core';
 import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
 import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
-const uri = 'https://api.code-challenge.ze.delivery/public/graphql';
+const uri = AppSettings.URL_API_ZE;
 // tslint:disable-next-line: typedef
 export function createApollo(httpLink: HttpLink) {
   return {

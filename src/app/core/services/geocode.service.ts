@@ -1,3 +1,4 @@
+import { AppSettings } from './../../../environments/app-settings';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
@@ -6,8 +7,8 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class GeocodeService {
 
-  private readonly API_URL = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
-  private readonly GOOGLE_MAPS_KEY = 'AIzaSyADsDnnDeEaRS3n-MCwGYMxDY3En0I2VQk';
+  private readonly API_URL = AppSettings.URL_API_GOOGLE_MAPS;
+  private readonly GOOGLE_MAPS_KEY = AppSettings.API_KEY_GOOGLE_MAPS;
 
   constructor(private http: HttpClient) {}
 
