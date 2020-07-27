@@ -12,6 +12,7 @@
     height: 48px;
     width: 70%;
     border-radius: 16px 0 0 16px;
+    -webkit-appearance: none;
 
     @media screen and (min-width: $sm) {
       width: 75%;
