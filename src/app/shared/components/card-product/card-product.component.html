@@ -4,7 +4,7 @@
       <ng-container *ngFor="let image of product?.images">
 
         <figure class="card__figure">
-          <img  [ngClass]="{'card__figure--opacity': isErrorImage[i]}" class="card__figure--image" [src]="isErrorImage[i] ? '../../../../assets/images/icons/logo.svg': image?.url" (error)="isErrorImage[i] = true" [alt]="product?.title"/>
+          <img [ngClass]="{'card__figure--opacity': isErrorImage[i]}" class="card__figure--image" [src]="isErrorImage[i] ? '../../../../assets/images/icons/logo.svg': image?.url" (error)="isErrorImage[i] = true" [alt]="product?.title"/>
 
           <ng-container *ngFor="let productVariant of product?.productVariants">
             <figcaption>
@@ -29,7 +29,7 @@
     <div class="loading">Loading...</div>
   </div>
 
-  <ng-template #notProducts *ngIf="!isLoading">
-    <p>Nenhum produto encontrado.</p>
+  <ng-template #notProducts>
+    <p *ngIf="!isLoading" >Nenhum produto encontrado.</p>
   </ng-template>
 </section>

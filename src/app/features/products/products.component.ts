@@ -1,3 +1,4 @@
+import { ICategoriesData } from './../../shared/interfaces/categories.interface';
 import { AllCategoryService } from './../../core/services/all-category.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
@@ -33,7 +34,7 @@ export class ProductsComponent implements OnInit {
 
   private getAllCategoriesProducts(): void {
     this.allCategoryService.getAllCategories()
-      .subscribe((resp) => {
+      .subscribe((resp: ICategoriesData) => {
         this.categories = resp.data.allCategory;
       });
   }

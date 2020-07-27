@@ -5,11 +5,4 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './box-product.component.html',
   styleUrls: ['./box-product.component.scss'],
 })
-export class BoxProductComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class BoxProductComponent { }

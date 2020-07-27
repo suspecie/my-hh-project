@@ -1,3 +1,4 @@
+import { IPocSearchData, IPocSearch } from './../../interfaces/poc-search.interface';
 import { IAddressInfo } from './../../interfaces/address-info.interface';
 import { PocSearchService } from './../../../core/services/poc-search.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -14,7 +15,7 @@ export class SearchComponent {
 
   public addressForm: FormGroup;
 
-  public pocs: [];
+  public pocs: [IPocSearch];
 
   public isLoading = false;
 
@@ -77,13 +78,13 @@ export class SearchComponent {
 
   private getPocSearch(lat: string, long: string): void {
     this.pocSearchService.getPoc(lat, long)
-      .subscribe((resp) => {
+      .subscribe((resp: IPocSearchData) => {
         this.pocs = resp.data.pocSearch;
 
         this.isLoading = false;
         this.isCleared = false;
 
-        if (resp.data.pocSearch && resp.data.pocSearch.length === 0) {
+        if (resp.data.pocSearch && !resp.data.pocSearch.length) {
           this.isError = true;
         }
       },

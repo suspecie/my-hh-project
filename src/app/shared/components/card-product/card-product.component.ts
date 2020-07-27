@@ -1,6 +1,8 @@
+import { IProduct } from './../../interfaces/products.interface';
 import { ProductsService } from './../../../core/services/products.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { filter, map } from 'rxjs/operators';
+import { IProductsData } from '../../interfaces/products.interface';
 
 @Component({
   selector: 'app-card-product',
@@ -57,15 +59,15 @@ export class CardProductComponent implements OnInit {
   private getProductsByCategory(idCategory: number): void {
     this.productsService.getProductsByCategory(this.idPoc, idCategory)
     .pipe(
-      map((resp) => {
+      map((resp: IProductsData) => {
         return resp.data.poc.products
-          .filter((products, i) => i <= 4);
+          .filter((products, i: number) => i <= 3);
       }),
     )
-    .subscribe((limitedProduct) => {
+    .subscribe((limitedProduct: [IProduct]) => {
       this.products = limitedProduct;
       this.products
-        .map((prod, i) => {
+        .map((prod: IProduct, i: number) => {
           this.unit[i] = 1;
         });
       this.isLoading = false;
@@ -74,10 +76,10 @@ export class CardProductComponent implements OnInit {
 
   private getAllProducts(): void {
     this.productsService.getAllProducts(this.idPoc)
-      .subscribe((resp) => {
+      .subscribe((resp: IProductsData) => {
         this.products = resp.data.poc.products;
         this.products
-          .map((prod, i) => {
+          .map((prod: IProduct, i: number) => {
             this.unit[i] = 1;
           });
         this.isLoading = false;
