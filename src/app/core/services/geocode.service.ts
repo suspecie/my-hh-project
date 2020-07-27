@@ -1,3 +1,4 @@
+import { IAddressInfo } from './../../shared/interfaces/address-info.interface';
 import { AppSettings } from './../../../environments/app-settings';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -12,9 +13,9 @@ export class GeocodeService {
 
   constructor(private http: HttpClient) {}
 
-  public getLatLogByAddress(address: string): Observable<any> {
+  public getLatLogByAddress(address: string): Observable<IAddressInfo> {
     const url = this.contactApiUrl(address);
-    return this.http.get<any>(url)
+    return this.http.get<IAddressInfo>(url)
       .pipe(
         map((resp) => {
           return resp;

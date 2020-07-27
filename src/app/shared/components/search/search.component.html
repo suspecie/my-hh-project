@@ -9,7 +9,7 @@
     <div [ngClass]="{'search__result--cleared': isCleared}" class="search__result" *ngFor="let poc of pocs">
       <div class="search__result--item" (click)="goToProducts(poc.id)">
         <p>{{ poc?.tradingName }}</p>
-        <p>{{ poc?.address?.address1 }} {{ poc?.address?.address2}}, {{ poc?.address?.number}} - {{ poc?.address?.city }}/{{ poc?.address?.province}}</p>
+        <p>{{ poc?.address?.address1 }} {{ poc?.address?.address2 }}, {{ poc?.address?.number }} - {{ poc?.address?.city }}/{{ poc?.address?.province }}</p>
         <hr>
       </div>
     </div>

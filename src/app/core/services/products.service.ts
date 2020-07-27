@@ -1,3 +1,4 @@
+import { IProductsData, IPoc } from './../../shared/interfaces/products.interface';
 import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import { Observable } from 'rxjs';
@@ -9,9 +10,9 @@ export class ProductsService {
 
   constructor(private apollo: Apollo) { }
 
-  public getProductsByCategory(idPoc: string, idCategory: number): Observable<any> {
+  public getProductsByCategory(idPoc: string, idCategory: number): Observable<IProductsData> {
     return this.apollo
-      .query<any>({
+      .query<IPoc>({
         query: gql`
         query poc($id: ID!, $categoryId: Int, $search: String){
           poc(id: $id) {
@@ -63,9 +64,9 @@ export class ProductsService {
       );
   }
 
-  public getAllProducts(idPoc: string): Observable<any> {
+  public getAllProducts(idPoc: string): Observable<IProductsData> {
     return this.apollo
-      .query<any>({
+      .query<IPoc>({
         query: gql`
         query poc($id: ID!, $categoryId: Int, $search: String){
           poc(id: $id) {

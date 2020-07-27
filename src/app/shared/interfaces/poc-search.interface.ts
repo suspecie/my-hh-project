@@ -9,7 +9,7 @@ export interface IPocSearchResult {
 export interface IPocSearch {
   id: string;
   tradingName: string;
-  address: [IPocSearchAdress];
+  address: IPocSearchAdress;
 }
 
 export interface IPocSearchAdress {

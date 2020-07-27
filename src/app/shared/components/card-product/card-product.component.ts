@@ -1,8 +1,7 @@
-import { IProduct } from './../../interfaces/products.interface';
+import { IProductsData, IProduct } from './../../interfaces/products.interface';
 import { ProductsService } from './../../../core/services/products.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { filter, map } from 'rxjs/operators';
-import { IProductsData } from '../../interfaces/products.interface';
 
 @Component({
   selector: 'app-card-product',

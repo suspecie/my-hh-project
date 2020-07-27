@@ -1,3 +1,4 @@
+import { IAllCategory, ICategoriesData } from './../../shared/interfaces/categories.interface';
 import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import { Observable } from 'rxjs';
@@ -9,9 +10,9 @@ export class AllCategoryService {
 
   constructor(private apollo: Apollo) { }
 
-  public getAllCategories(): Observable<any> {
+  public getAllCategories(): Observable<ICategoriesData> {
     return this.apollo
-      .query<any>({
+      .query<IAllCategory>({
         query: gql`
           query allCategoriesSearch {
             allCategory{

@@ -1,3 +1,4 @@
+import { IPocSearchData, IPocSearchResult } from './../../shared/interfaces/poc-search.interface';
 import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import { Observable } from 'rxjs';
@@ -10,9 +11,9 @@ export class PocSearchService {
 
   constructor(private apollo: Apollo) { }
 
-  public getPoc(latitude: string, longitude: string): Observable<any> {
+  public getPoc(latitude: string, longitude: string): Observable<IPocSearchData> {
     return this.apollo
-      .query<any>({
+      .query<IPocSearchResult>({
         query: gql`
         query pocSearchMethod($now: DateTime!, $algorithm: String!, $lat: String!, $long: String!) {
           pocSearch(now: $now, algorithm: $algorithm, lat: $lat, long: $long) {
