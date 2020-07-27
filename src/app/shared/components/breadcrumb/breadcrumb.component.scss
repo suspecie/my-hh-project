@@ -1,0 +1,19 @@
+@import '../../../../assets/styles/core.scss';
+
+.breadcrumb {
+
+  &__item {
+    display: inline;
+    margin-right: 8px;
+  }
+
+  &__item--link {
+    color: $hh-brand-secondary;
+  }
+
+  &__item--link:hover {
+    text-decoration-line: underline;;
+  }
+
+}
+

@@ -1,6 +1,11 @@
 <nav>
-  <ul>
-      <li><a routerLink="/">Home</a></li>
-      <li *ngIf="isAllProductsRoute"><a (click)="goToProducts()">Produtos</a></li>
+  <ul class="breadcrumb">
+      <li class="breadcrumb__item">
+        <a class="breadcrumb__item--link" routerLink="/">Home</a>
+      </li>
+      <li class="breadcrumb__item" *ngIf="isAllProductsRoute">
+        <a class="breadcrumb__item--link" (click)="goToProducts()">
+          > Produtos</a>
+        </li>
   </ul>
 </nav>

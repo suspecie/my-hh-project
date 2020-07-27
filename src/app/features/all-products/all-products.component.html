@@ -2,12 +2,14 @@
   <app-header></app-header>
 
   <div class="all-products__items">
-    <ng-container *ngIf="idPoc; else notProduct">
-      <app-breadcrumb [idPoc]="idPoc" [isAllProductsRoute]="true"></app-breadcrumb>
-      <app-box-product>
-        <app-card-product [idPoc]="idPoc"></app-card-product>
-      </app-box-product>
-    </ng-container>
+    <div class="all-products__items--container">
+      <ng-container *ngIf="idPoc; else notProduct">
+        <app-breadcrumb [idPoc]="idPoc" [isAllProductsRoute]="true"></app-breadcrumb>
+        <app-box-product>
+          <app-card-product [idPoc]="idPoc"></app-card-product>
+        </app-box-product>
+      </ng-container>
+    </div>
   </div>
 
   <app-footer></app-footer>
