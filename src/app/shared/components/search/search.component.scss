@@ -9,7 +9,7 @@
     border: 0px;
     box-shadow: 2px 3px 3px 0px $hh-brand-shadow;
     padding: 0 $spacing-md;
-    height: 48px;
+    height: $spacing-2xl;
     width: 70%;
     border-radius: 16px 0 0 16px;
     -webkit-appearance: none;
@@ -48,7 +48,7 @@
   }
 
   &--item {
-    padding: 16px;
+    padding: $spacing-md;
     font-size: 14px;
     font-weight: 300;
   }
@@ -60,19 +60,19 @@
 }
 
 .search__result--paragraph {
-  margin: 16px;
+  margin: $spacing-md;
 }
 
 .search_group--clear {
     background-color: $hh-brand-secondary-light;
-    height: 48px;
+    height: $spacing-2xl;
     display: inline-block;
     margin: 0;
-    line-height: 48px;
+    line-height: $spacing-2xl;
     border-radius: 0 16px 16px 0;
     width: 30px;
     margin-right: $spacing-sm;
-    box-shadow: 2px 3px 3px 0px #29292963;
+    box-shadow: 2px 3px 3px 0px $hh-brand-shadow;
     cursor: pointer;
 }
 

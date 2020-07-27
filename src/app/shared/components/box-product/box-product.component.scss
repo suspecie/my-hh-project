@@ -3,10 +3,10 @@
 .box-product__container {
   background-color: $hh-brand-secondary-light;
   border-radius: 8px;
-  padding: 16px;
+  padding: $spacing-md;
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-shadow: 2px 3px 3px 0px $hh-brand-shadow;
-  margin: 32px 0;
+  margin: $spacing-xl 0;
 }

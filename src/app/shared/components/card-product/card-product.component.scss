@@ -10,12 +10,12 @@
 .card__figure {
   background-color: $hh-brand-secondary-light;
   border-radius: 8px;
-  padding: 24px;
+  padding: $spacing-lg;
   display: flex;
   flex-direction: column;
-  margin: 24px;
+  margin: $spacing-lg;
   width: 200px;
-  box-shadow: 2px 2px 8px 0px #29292963;
+  box-shadow: 2px 2px 8px 0px $hh-brand-shadow;
   justify-content: space-between;
 
   &--product-name {
@@ -24,7 +24,7 @@
     align-items: flex-start;
     font-size: 14px;
     font-weight: $font-medium;
-    margin-top: 16px 0 0;
+    margin-top: $spacing-md 0 0;
   }
 
   &--price {
@@ -41,10 +41,10 @@
 .card__quantity {
   display: flex;
   justify-content: space-between;
-  margin-top: 16px;
+  margin-top: $spacing-md;
 
   &--button {
-    width: 48px;
+    width: $spacing-2xl;
   }
 }
 
