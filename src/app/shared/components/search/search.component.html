@@ -1,7 +1,7 @@
 <form [formGroup]="addressForm">
   <div class="search__group">
-    <input class="search__group--input" type="text" formControlName="address">
-    <p class= "search_group--clear" (click)="clear()">X</p>
+    <input arial-label="Endereço" class="search__group--input" type="text" formControlName="address">
+    <p arial-label="Limpar" class= "search_group--clear" (click)="clear()">X</p>
     <button class="search__group--button" name="btnSearch" (click)="onSubmit()">Buscar</button>
   </div>
 

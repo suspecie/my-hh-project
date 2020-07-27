@@ -13,9 +13,9 @@
             </figcaption>
 
             <div class="card__quantity">
-              <button class="card__quantity--button" (click)="decreasesPrice(productVariant?.price, i)">-</button>
+              <button arial-label="Diminui quanitidade" class="card__quantity--button" (click)="decreasesPrice(productVariant?.price, i)">-</button>
               <p>{{ unit[i] }}</p>
-              <button class="card__quantity--button" (click)="increasesPrice(productVariant?.price, i)">+</button>
+              <button arial-label="Aumenta quanitidade" class="card__quantity--button" (click)="increasesPrice(productVariant?.price, i)">+</button>
             </div>
           </ng-container>
 
