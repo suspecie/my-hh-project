@@ -15,7 +15,7 @@ export class SearchComponent {
 
   public addressForm: FormGroup;
 
-  public pocs: [IPocSearch];
+  public pocs: [IPocSearch] | [];
 
   public isLoading = false;
 

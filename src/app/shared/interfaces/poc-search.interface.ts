@@ -3,7 +3,7 @@ export interface IPocSearchData {
 }
 
 export interface IPocSearchResult {
-  pocSearch: [IPocSearch];
+  pocSearch: [IPocSearch] | [];
 }
 
 export interface IPocSearch {

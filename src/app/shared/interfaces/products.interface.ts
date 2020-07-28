@@ -8,13 +8,13 @@ export interface IPoc {
 
 export interface IPocData {
   id: string;
-  products: [IProduct];
+  products: [IProduct] | [];
 }
 
 export interface IProduct {
   id: string;
-  images: [IImage];
-  productsVariants: [IProductVariants];
+  images: [IImage] | [];
+  productsVariants: [IProductVariants] | [];
   title: string;
 }
 

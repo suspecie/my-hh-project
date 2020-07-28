@@ -3,7 +3,7 @@ export interface ICategoriesData {
 }
 
 export interface IAllCategory {
-  allCategory: [ICategory];
+  allCategory: [ICategory] | [];
 }
 
 export interface ICategory {

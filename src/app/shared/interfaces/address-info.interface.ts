@@ -1,5 +1,5 @@
 export interface IAddressInfo {
-  results: [IAddressInfoResults];
+  results: [IAddressInfoResults] | [];
 }
 
 export interface IAddressInfoResults {
