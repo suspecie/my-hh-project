@@ -31,7 +31,7 @@
     "jest-preset-angular": "^8.2.1",
     "pre-commit": "^1.2.2",
     "rxjs": "~6.5.5",
-    "stylelint": "^13.6.1",
+    "stylelint": "^15.10.1",
     "stylelint-config-standard": "^20.0.0",
     "tslib": "^2.0.0",
     "tslint-eslint-rules": "^5.4.0",
